@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board429 xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aviftech.com/Schemas/Databus/ file:///C:/Program%20Files%20(x86)/AIT/Flight%20Simulyzer%20(VISA)/AIT_429.xsd" dataRateModifier="STANDARD" lowSpeedSelection="STANDARD_LOW_SPEED" sdiModeEnabled="false" name="BT_TestBoard">
+    <boardIndex>1</boardIndex>
+    <channel429 channelNumber="1" name="BT_CH1" channelSpeed="HIGH_SPEED_CHANNEL">
+        <Rx>
+            <chronMonitor/>
+            <labels>
+                <label labelId="02">
+                    <buffer name="BT_Lab3_NOSDI" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Avs-ADS-CAS-1-02" startBit="14" numberBits="14" scaleFactor="0.125" scaleOffset="0" signed="False" /> -->
+                    <!-- <parameter name="SSM-02" startBit="29" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="00">
+                    <bufferSdi name="BT_Lab1_SDI0" sdi="00" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Avs-ADS-CAS-1-00_0" startBit="14" numberBits="14" scaleFactor="0.125" scaleOffset="0" signed="False" /> -->
+                    <!-- <parameter name="SSM-00_0" startBit="29" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                    <bufferSdi name="BT_Lab1_SDI1" sdi="01" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Avs-ADS-CAS-1-00_1" startBit="14" numberBits="14" scaleFactor="0.125" scaleOffset="0" signed="False" /> -->
+                    <!-- <parameter name="SSM-00_1" startBit="29" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                    <bufferSdi name="BT_Lab1_SDI2" sdi="02" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Avs-ADS-CAS-1-00_2" startBit="14" numberBits="14" scaleFactor="0.125" scaleOffset="0" signed="False" /> -->
+                    <!-- <parameter name="SSM-00_2" startBit="29" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                    <bufferSdi name="BT_Lab1_SDI3" sdi="03" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Avs-ADS-CAS-1-00_3" startBit="14" numberBits="14" scaleFactor="0.125" scaleOffset="0" signed="False" /> -->
+                    <!-- <parameter name="SSM-00_3" startBit="29" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="01">
+                    <bufferSdi name="BT_Lab2_SDI0" sdi="00" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Avs-ADS-CAS-1-01_0" startBit="14" numberBits="14" scaleFactor="0.125" scaleOffset="0" signed="False" /> -->
+                    <!-- <parameter name="SSM-01_0" startBit="29" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                    <bufferSdi name="BT_Lab2_SDI1" sdi="01" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Avs-ADS-CAS-1-01_1" startBit="14" numberBits="14" scaleFactor="0.125" scaleOffset="0" signed="False" /> -->
+                    <!-- <parameter name="SSM-01_0" startBit="29" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+</board429>

@@ -1,0 +1,1 @@
+You must have the XSD next to the XML file.! best practice is to get the one from the AIT driver install not this one so you know you have the latest one

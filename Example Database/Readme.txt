@@ -1,0 +1,1 @@
+You can edit these XMLs by hand or you can use the Flight Simulyzer tool available at www.aviftech.com to create your database with a really nice easy to use GUI

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board429 xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aviftech.com/Schemas/Databus/ file:///C:/Program%20Files%20(x86)/AIT/Flight%20Simulyzer%20(VISA)/AIT_429.xsd" dataRateModifier="STANDARD" lowSpeedSelection="STANDARD_LOW_SPEED" sdiModeEnabled="false" name="BT_TestBoard">
+    <boardIndex>1</boardIndex>
+    <channel429 channelNumber="1" name="BT_CH1" channelSpeed="HIGH_SPEED_CHANNEL">
+        <Tx amplitudeVoltage="10" externalTriggerLine="0" maxAsyncronousBufferWords="1024" parityEnabled="true" startWithExternalTrigger="false">
+            <TxScheduledLabel name="BT_Trans1" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="0">
+                    <data21>000001</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="BT_Transfer_2" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="1">
+                    <data21>000002</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="BT_Transfer_3" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="2">
+                    <data21>000003</data21>
+                </wordBuffer_SDI>
+                <!-- <parameter name="Elec-EPDU-fault-6_MSF" startBit="19" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_CM" startBit="27" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_SW" startBit="26" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_BC" startBit="25" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_MP" startBit="24" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_PPW" startBit="12" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_SEU" startBit="23" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_AS" startBit="28" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_IOF" startBit="22" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_AVF" startBit="21" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_DVF" startBit="20" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_MF" startBit="18" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_SF" startBit="17" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_GAF" startBit="16" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_LCI" startBit="15" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_SPW" startBit="13" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_RUF" startBit="11" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_LUF" startBit="10" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_RBA" startBit="9" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_LBA" startBit="8" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="Elec-EPDU-fault-6_PEW" startBit="14" numberBits="1" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                <!-- <parameter name="SSM" startBit="29" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+            <TxScheduledLabel name="BT_Transfer_4" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="3">
+                    <data21>000004</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="BT_Transfer_5" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="01" sdi="0">
+                    <data21>000006</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="BT_Transfer_6" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="01" sdi="1">
+                    <data21>000007</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="BT_Transfer_7" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer label="02">
+                    <data23>000008</data23>
+                </wordBuffer>
+            </TxScheduledLabel>
+        </Tx>
+    </channel429>
+</board429>

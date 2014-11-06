@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by John Cole (Avionics Interface Technologies) -->
+<xs:schema xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:avif="http://www.aviftech.com/Schemas/Databus/" targetNamespace="http://www.aviftech.com/Schemas/Databus/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="board429">
+		<xs:annotation>
+			<xs:documentation>Root element AIT 429 board</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:annotation>
+						<xs:documentation>These options have been deprecated and are not used.</xs:documentation>
+					</xs:annotation>
+					<xs:element name="boardSerialNumber">
+						<xs:annotation>
+							<xs:documentation>Deprecated</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:unsignedLong">
+								<xs:minInclusive value="1"/>
+								<xs:maxInclusive value="9999"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="boardIndex" type="xs:unsignedInt">
+						<xs:annotation>
+							<xs:documentation>Deprecated</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="boardResourceName">
+						<xs:annotation>
+							<xs:documentation>Deprecated</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:maxLength value="256"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:choice>
+				<xs:element ref="channel429" maxOccurs="64"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="nameGroup"/>
+			<xs:attributeGroup ref="dataRateModifier_Attribute_Group">
+				<xs:annotation>
+					<xs:documentation>Deprecated. Use the channel speed setting instead.</xs:documentation>
+				</xs:annotation>
+			</xs:attributeGroup>
+			<xs:attributeGroup ref="lowSpeedSelection_Attribute_Group">
+				<xs:annotation>
+					<xs:documentation>Deprecated. Use the channel speed setting instead.</xs:documentation>
+				</xs:annotation>
+			</xs:attributeGroup>
+			<xs:attributeGroup ref="sdiModeEnabled_Attribute_Group">
+				<xs:annotation>
+					<xs:documentation>Deprectated.</xs:documentation>
+				</xs:annotation>
+			</xs:attributeGroup>
+		</xs:complexType>
+		<xs:unique name="ChannelNumberUnique">
+			<xs:selector xpath="avif:channel429"/>
+			<xs:field xpath="@channelNumber"/>
+		</xs:unique>
+	</xs:element>
+	<xs:element name="channel429">
+		<xs:annotation>
+			<xs:documentation>implements a 429 channel on a board</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="Tx"/>
+					<xs:element ref="Rx" minOccurs="0"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="TxReplay"/>
+					<xs:element ref="Rx" minOccurs="0"/>
+				</xs:sequence>
+				<xs:element ref="Rx"/>
+				<xs:element ref="DataCorrupter"/>
+			</xs:choice>
+			<xs:attributeGroup ref="channelNumberGroup"/>
+			<xs:attributeGroup ref="nameGroup"/>
+			<xs:attribute name="speed" use="optional" default="100000">
+				<xs:annotation>
+					<xs:documentation>The channel speed in bits per second.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="2000"/>
+						<xs:maxInclusive value="150000"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="channelSpeed" use="optional" default="HIGH_SPEED_CHANNEL">
+				<xs:annotation>
+					<xs:documentation>Deprecated. Use the speed setting instead.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="HIGH_SPEED_CHANNEL"/>
+						<xs:enumeration value="LOW_SPEED_CHANNEL"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="wordBuffer_SDI">
+		<xs:annotation>
+			<xs:documentation>An array of ARINC 429 words sharing a common 8-bit label and 2-bit SDI.
+			Each word includes 19 bits of data.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="data21" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>21-bit hexadecimal data field.  Maximum value is 0x1FFFFF.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:hexBinary">
+							<xs:maxLength value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="labelGroup"/>
+			<xs:attributeGroup ref="sdiGroup"/>
+			<xs:attribute name="depth" type="xs:unsignedInt" use="optional">
+				<xs:annotation>
+					<xs:documentation>Buffer depth; i.e., the number of ARINC 429 words in the buffer.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="wordBuffer">
+		<xs:annotation>
+			<xs:documentation>An array of ARINC 429 words sharing a common 8-bit label.
+			Each word includes 23 bits of data.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="data23" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>23-bit hexadecimal data field.  Maximum value is 0x7FFFFF.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:hexBinary">
+							<xs:maxLength value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="labelGroup"/>
+			<xs:attribute name="depth" type="xs:unsignedInt" use="optional">
+				<xs:annotation>
+					<xs:documentation>Buffer depth; i.e., the number of ARINC 429 words in the buffer.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rawBuffer">
+		<xs:annotation>
+			<xs:documentation>An array of ARINC 429 words.  Each word includes 32 bits of data.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="data32" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>32-bit hexadecimal data field.  Maximum value is 0xFFFFFFFF.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:hexBinary">
+							<xs:maxLength value="4"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="depth" type="xs:unsignedInt" use="optional">
+				<xs:annotation>
+					<xs:documentation>Buffer depth; i.e., the number of ARINC 429 words in the buffer.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:attributeGroup name="labelGroup">
+		<xs:annotation>
+			<xs:documentation>An ARINC429 8-bit Label Indicator</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="label" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:hexBinary">
+					<xs:length value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="nameGroup">
+		<xs:attribute name="name" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>An optional name string.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:element name="chronMonitor">
+		<xs:annotation>
+			<xs:documentation>Defines a chronological monitor channel's configuration parameters.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0">
+				<xs:sequence>
+					<xs:element ref="RxStartTrigger"/>
+					<xs:element ref="RxStopTrigger" minOccurs="0"/>
+					<xs:element ref="simpleFilter" minOccurs="0"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="RxStopTrigger"/>
+					<xs:element ref="simpleFilter" minOccurs="0"/>
+				</xs:sequence>
+				<xs:element ref="simpleFilter"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:attributeGroup name="enabledGroup">
+		<xs:attribute name="enabled" type="xs:boolean" use="optional" default="true">
+			<xs:annotation>
+				<xs:documentation>Sets whether this transfer will be enabled when configured. 
+	default: True</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="initialTransferDelayGroup">
+		<xs:attribute name="initialTransferDelay" type="xs:double" use="optional">
+			<xs:annotation>
+				<xs:documentation>Set a delay time in milliseconds this transfer will wait before starting regular cyclic transmission. 
+	AIT Hardware Note:
+	The effective start time of the first word will be delay + period. The default delay is 0. 
+	Alternative Hardware Note:
+	The effective start time of the first word will be delay, additionally the delay time cannot be greater than the period. The default is the same as the period. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="transferPeriodGroup">
+		<xs:attribute name="transferPeriod" use="optional">
+			<xs:annotation>
+				<xs:documentation>Set the time interval, in milliseconds, between transfers.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:unsignedInt">
+					<xs:minInclusive value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="transferRateGroup">
+		<xs:attribute name="transferRate" use="optional">
+			<xs:annotation>
+				<xs:documentation>Set the periodic rate, in hertz, at which the transfer will take place. </xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:double">
+					<xs:minExclusive value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="errorInjectionTypeGroup">
+		<xs:attribute name="errorInjectionType" use="optional" default="NONE">
+			<xs:annotation>
+				<xs:documentation>Enumerates various error injection settings which can be applied to a label transfer configuration. default: NONE</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="NONE"/>
+					<xs:enumeration value="BIT_COUNT_HIGH"/>
+					<xs:enumeration value="BIT_COUNT_LOW"/>
+					<xs:enumeration value="CODING_ERROR"/>
+					<xs:enumeration value="PARITY_ERROR"/>
+					<xs:enumeration value="GAP_ERROR"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="transferCountGroup">
+		<xs:attribute name="transferCount" type="xs:unsignedShort" use="optional" default="0">
+			<xs:annotation>
+				<xs:documentation>Sets the number of times this block transfer should occur. 
+	If this value is set to zero, the block transfer will occur cyclicly, i. e. until it is stopped.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:element name="RxStartTrigger">
+		<xs:annotation>
+			<xs:documentation>Configuration defining a start trigger condition. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="RxErrorTrigger">
+					<xs:annotation>
+						<xs:documentation>Configures the receiver to start when a physical layer error occurs. 
+Bit count high
+Bit count low
+Coding errors
+Parity errors
+Gap errors
+Any of these errors will cause the trigger to assert.
+Default values:
+StrobeOnTrigger disabled
+StrobeTriggerLine 0</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attributeGroup ref="strobeLineGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RxSimpleTrigger">
+					<xs:annotation>
+						<xs:documentation>The SimpleTrigger starts the capture on the first ARINC Data Word that passes the filters configured for the channel. 
+Default values:
+StrobeOnTrigger disabled
+StrobeTriggerLine 0 
+</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attributeGroup ref="strobeLineGroup"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RxStopTrigger">
+		<xs:annotation>
+			<xs:documentation>Configuration object defining a stop trigger condition. 
+To have the channel capture continuously, use a default constructed configuration.
+To have the channel capture until a specified number of words is received, add a RxWordCountTrigger to the configuration.
+To have the channel stop when a certain label value is received, add a RxLabelTrigger. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0">
+				<xs:element name="RxWordCountTrigger">
+					<xs:annotation>
+						<xs:documentation>Configures the receiver to stop capture after the specified number of words. </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="wordCount" type="xs:unsignedInt" use="required">
+							<xs:annotation>
+								<xs:documentation>Sets the word count for this trigger.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:attributeGroup name="strobeLineGroup">
+		<xs:attribute name="strobeLine" type="xs:unsignedInt" use="optional">
+			<xs:annotation>
+				<xs:documentation>Sets the trigger to strobe an external line when the trigger occurs.  0 to disable the strobe  </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:element name="Rx">
+		<xs:annotation>
+			<xs:documentation>Defines a Rx channel to be used as a monitor or a receiver</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="chronMonitor"/>
+					<xs:element ref="labels" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Defines mailbox mode buffers for delivery of specific labels.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:element ref="labels"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataCorrupter">
+		<xs:annotation>
+			<xs:documentation>Defines a Tx data corrupter channel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="RemoveLabel">
+					<xs:complexType>
+						<xs:attributeGroup ref="labelGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RemoveLabelSdi">
+					<xs:complexType>
+						<xs:attributeGroup ref="labelGroup"/>
+						<xs:attributeGroup ref="sdiGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="InsertBit">
+					<xs:complexType>
+						<xs:attributeGroup ref="labelGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="InsertBitSdi">
+					<xs:complexType>
+						<xs:attributeGroup ref="labelGroup"/>
+						<xs:attributeGroup ref="sdiGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RemoveBit">
+					<xs:complexType>
+						<xs:attributeGroup ref="labelGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RemoveBitSdi">
+					<xs:complexType>
+						<xs:attributeGroup ref="labelGroup"/>
+						<xs:attributeGroup ref="sdiGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ParityError">
+					<xs:complexType>
+						<xs:attributeGroup ref="labelGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ParityErrorSdi">
+					<xs:complexType>
+						<xs:attributeGroup ref="labelGroup"/>
+						<xs:attributeGroup ref="sdiGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CorruptionFunction">
+					<xs:complexType>
+						<xs:attributeGroup ref="labelGroup"/>
+						<xs:attributeGroup ref="corruptionFunctionGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CorruptionFunctionSdi">
+					<xs:complexType>
+						<xs:attributeGroup ref="labelGroup"/>
+						<xs:attributeGroup ref="sdiGroup"/>
+						<xs:attributeGroup ref="corruptionFunctionGroup"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:attribute name="sourceChannelNumber" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedByte">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="64"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attributeGroup ref="txChannelSharedGroup"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Tx">
+		<xs:annotation>
+			<xs:documentation>Defines a TxRateOriented channel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="TxAcyclicTransfer">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element ref="wordBuffer_SDI"/>
+							<xs:element ref="wordBuffer"/>
+							<xs:element ref="rawBuffer"/>
+						</xs:choice>
+						<xs:attributeGroup ref="nameGroup"/>
+						<xs:attributeGroup ref="errorInjectionTypeGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TxBlockTransfer">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element ref="wordBuffer_SDI"/>
+							<xs:element ref="wordBuffer"/>
+							<xs:element ref="rawBuffer"/>
+						</xs:choice>
+						<xs:attributeGroup ref="nameGroup"/>
+						<xs:attributeGroup ref="enabledGroup"/>
+						<xs:attributeGroup ref="initialTransferDelayGroup"/>
+						<xs:attributeGroup ref="transferPeriodGroup"/>
+						<xs:attributeGroup ref="transferRateGroup"/>
+						<xs:attributeGroup ref="errorInjectionTypeGroup"/>
+						<xs:attributeGroup ref="transferCountGroup"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TxScheduledLabel">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element ref="wordBuffer_SDI"/>
+							<xs:element ref="wordBuffer"/>
+							<xs:element ref="rawBuffer"/>
+						</xs:choice>
+						<xs:attributeGroup ref="nameGroup"/>
+						<xs:attributeGroup ref="enabledGroup"/>
+						<xs:attributeGroup ref="initialTransferDelayGroup"/>
+						<xs:attributeGroup ref="transferPeriodGroup"/>
+						<xs:attributeGroup ref="transferRateGroup"/>
+						<xs:attributeGroup ref="errorInjectionTypeGroup"/>
+						<xs:attributeGroup ref="transferCountGroup"/>
+						<xs:attribute name="transferGap" use="optional" default="4">
+							<xs:annotation>
+								<xs:documentation>Sets the width of inter-message transfer gap in bits. 
+The transfer gap occurs after the specified label transfer. This is currently fixed at 4.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:unsignedInt">
+									<xs:minInclusive value="4"/>
+									<xs:maxInclusive value="4"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TxStrobeTransfer">
+					<xs:complexType>
+						<xs:attributeGroup ref="nameGroup"/>
+						<xs:attributeGroup ref="enabledGroup"/>
+						<xs:attributeGroup ref="initialTransferDelayGroup"/>
+						<xs:attributeGroup ref="transferPeriodGroup"/>
+						<xs:attributeGroup ref="transferRateGroup"/>
+						<xs:attribute name="triggerLine" type="xs:unsignedInt" use="required">
+							<xs:annotation>
+								<xs:documentation>Sets the trigger line which is to be strobed during this transfer.
+Trigger lines are 1-indexed, and not every hardware platform has the same number of triggers.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:attribute name="maxAsyncronousBufferWords" type="xs:unsignedInt" use="optional" default="1024">
+				<xs:annotation>
+					<xs:documentation>Set the maximum size of the asynchronous buffer.
+This will create a soft limit on the amount of memory that can be allocated towards asynchronous sends. This does not reserve the memory or allocate any memory, it simply prevents the channel from taking more.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attributeGroup ref="txChannelSharedGroup"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attributeGroup name="SSM_Attribute_Group">
+		<xs:annotation>
+			<xs:documentation>Sign / Status Matrix  :  indicates status of data (valid or not), or sign of data (negative or not)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="SSM" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:unsignedByte">
+					<xs:minInclusive value="0"/>
+					<xs:maxInclusive value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="dataRateModifier_Attribute_Group">
+		<xs:annotation>
+			<xs:documentation>Adjusts the data rate for all channels if not specified default is: STANDARD</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="dataRateModifier" use="optional" default="STANDARD">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="STANDARD"/>
+					<xs:enumeration value="PLUS_9_1_PERCENT"/>
+					<xs:enumeration value="PLUS_20_PERCENT"/>
+					<xs:enumeration value="MINUS_7_7_PERCENT"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="lowSpeedSelection_Attribute_Group">
+		<xs:annotation>
+			<xs:documentation>This option applies to all low speed channels on the board. For low speed channels, the effect of LowSpeedSelection and the DataRateModifier are cumulative. The default is STANDARD_LOW_SPEED at 12.5kHz, option is INTERMEDIATE_LOW_SPEED at 13.3kHz.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="lowSpeedSelection" use="optional" default="STANDARD_LOW_SPEED">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="STANDARD_LOW_SPEED"/>
+					<xs:enumeration value="INTERMEDIATE_LOW_SPEED"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="sdiModeEnabled_Attribute_Group">
+		<xs:annotation>
+			<xs:documentation>Enables the receivers to sort received data based on the combination of the Label and the SDI field. 
+Disabling this causes the boards receivers to ignore the SDI when sorting Labels.
+default is: True</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="sdiModeEnabled" type="xs:boolean" use="optional" default="true"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="channelNumberGroup">
+		<xs:annotation>
+			<xs:documentation>The channel number (1-indexed)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="channelNumber" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:unsignedByte">
+					<xs:minInclusive value="1"/>
+					<xs:maxInclusive value="64"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="txChannelSharedGroup">
+		<xs:attribute name="amplitudeVoltage" type="xs:double" use="optional" default="10.0">
+			<xs:annotation>
+				<xs:documentation>Sets the desired line to line amplitude voltage of the transmit channel. 
+Note that not all hardware can accept changes in transmit voltage levels. If the hardware cannot be configured, use the default value of 10V.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="externalTriggerLine" type="xs:unsignedInt" use="optional" default="0">
+			<xs:annotation>
+				<xs:documentation>Enables and sets the line for starting with an external trigger line which should be used to start transmitter execution. The trigger lines are 1 indexed. Note that not all hardware has external trigger lines and some platforms have more lines than others. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="parityEnabled" type="xs:boolean" use="optional" default="true">
+			<xs:annotation>
+				<xs:documentation>Sets whether parity is enabled.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="startWithExternalTrigger" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>Enables or disables start with external trigger. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:element name="simpleFilter">
+		<xs:annotation>
+			<xs:documentation>Sets a new simple filter configuration for the Rx Channel. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="1024">
+					<xs:element name="labelFilterCondition">
+						<xs:complexType>
+							<xs:attributeGroup ref="labelGroup"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="labelSdiFilterCondition">
+						<xs:complexType>
+							<xs:attributeGroup ref="labelGroup"/>
+							<xs:attributeGroup ref="sdiGroup"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="inverted" type="xs:boolean" use="optional" default="false">
+				<xs:annotation>
+					<xs:documentation>Set whether the filter should be inverted or not. Default value is false (not inverted)</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+		<xs:unique name="labelunique">
+			<xs:selector xpath="avif:labelFilterCondition"/>
+			<xs:field xpath="@label"/>
+		</xs:unique>
+		<xs:unique name="labelsdiunique">
+			<xs:selector xpath="avif:labelSdiFilterCondition"/>
+			<xs:field xpath="@label"/>
+			<xs:field xpath="@sdi"/>
+		</xs:unique>
+	</xs:element>
+	<xs:attributeGroup name="sdiGroup">
+		<xs:attribute name="sdi" use="required">
+			<xs:annotation>
+				<xs:documentation>ARINC429 Source/Destination Indicator</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:unsignedByte">
+					<xs:minInclusive value="0"/>
+					<xs:maxInclusive value="3"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="corruptionFunctionGroup">
+		<xs:attribute name="and" use="optional" default="FFFFFFFF">
+			<xs:simpleType>
+				<xs:restriction base="xs:hexBinary">
+					<xs:length value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="or" use="optional" default="00000000">
+			<xs:simpleType>
+				<xs:restriction base="xs:hexBinary">
+					<xs:length value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="xor" use="optional" default="00000000">
+			<xs:simpleType>
+				<xs:restriction base="xs:hexBinary">
+					<xs:length value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="add" use="optional" default="00000000">
+			<xs:simpleType>
+				<xs:restriction base="xs:hexBinary">
+					<xs:length value="4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:element name="labels">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="label" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="buffer">
+								<xs:complexType>
+									<xs:attribute name="name">
+										<xs:annotation>
+											<xs:documentation>An optional name to associate with the label buffer.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="depth" use="required">
+										<xs:annotation>
+											<xs:documentation>The size of the buffer in entries, where one entry is one 32-bit Arinc-429 word. </xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:unsignedInt">
+												<xs:minInclusive value="1"/>
+												<xs:maxInclusive value="65535"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="parityEnabled" type="xs:boolean" use="optional" default="true">
+										<xs:annotation>
+											<xs:documentation>True to enable bit D32 as a parity bit, false to treat D32 as a data bit.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="cyclic" type="xs:boolean" use="optional" fixed="false">
+										<xs:annotation>
+											<xs:documentation>Indicates if the buffer is cyclic or single-shot. Note: Cyclic is not yet supported.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:sequence>
+								<xs:element name="bufferSdi" maxOccurs="4">
+									<xs:complexType>
+										<xs:attribute name="name">
+											<xs:annotation>
+												<xs:documentation>An optional name to associate with the label buffer.</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="sdi" use="required">
+											<xs:annotation>
+												<xs:documentation>ARINC429 Source/Destination Indicator. </xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:unsignedByte">
+													<xs:minInclusive value="0"/>
+													<xs:maxInclusive value="3"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:attribute>
+										<xs:attribute name="depth" type="xs:unsignedInt" use="required">
+											<xs:annotation>
+												<xs:documentation>The size of the buffer in entries, where one entry is one 32-bit Arinc-429 word. </xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="parityEnabled" type="xs:boolean" use="optional" default="true">
+											<xs:annotation>
+												<xs:documentation>True to enable bit D32 as a parity bit, false to treat D32 as a data bit.</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="cyclic" type="xs:boolean" use="optional" fixed="false">
+											<xs:annotation>
+												<xs:documentation>Indicates if the buffer is cyclic or single-shot. Note: Cyclic is not yet supported.</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:choice>
+						<xs:attribute name="name">
+							<xs:annotation>
+								<xs:documentation>Deprecated.  Use the Name attribute under buffer or bufferSdi.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="labelId" use="required">
+							<xs:annotation>
+								<xs:documentation>An ARINC429 8-bit Label value.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:hexBinary">
+									<xs:length value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+					<xs:unique name="sdiConstraint">
+						<xs:selector xpath="avif:bufferSdi"/>
+						<xs:field xpath="@sdi"/>
+					</xs:unique>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="labelIdConstraint">
+			<xs:selector xpath="avif:label"/>
+			<xs:field xpath="@labelId"/>
+		</xs:unique>
+	</xs:element>
+	<xs:element name="TxReplay">
+		<xs:complexType>
+			<xs:attribute name="archiveFilePathName">
+				<xs:annotation>
+					<xs:documentation>Provides the Path to the replay file (the source of the replay data)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="256"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
