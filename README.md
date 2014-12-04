@@ -12,7 +12,7 @@ Builds of this IP are available on the [NI VeriStand Add-ons Community](https://
 
 ### Quality, Limitations ###
 
-This IP should be considered high quality and mature. The AIT ARINC 429 Custom Device has been used worldwide by many customers in deployed applications for more than four years.
+This IP should be considered high quality and mature. The AIT ARINC 429 Custom Device has been used worldwide by many customers in deployed applications since 2010.
 
 ### Dependencies ###
 
