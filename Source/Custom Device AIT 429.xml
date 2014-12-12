@@ -5,7 +5,7 @@
 		<eng>AIT 429</eng>
 		<loc>AIT 429</loc>
 	</AddMenu>
-	<Version>3.0.0</Version>
+	<Version>2.1.0</Version>
 	<Type>Inline HW Interface</Type>
 	<MaxOccurrence>2474</MaxOccurrence>
 	<MainPageGUID>961BA415-D612-25DB-1EE4-93AC9399C9B8</MainPageGUID>

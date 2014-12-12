@@ -23,6 +23,7 @@
                     <bufferSdi name="Label0_SDI3" sdi="03" depth="1" parityEnabled="true"/>
                     <!-- <parameter name="Param1Label0_SDI3" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
                     <!-- <parameter name="Param2Label0_SDI3" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+					<!-- <parameter name="Label0_SDI3_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
                 </label>
                 <label labelId="01">
                     <bufferSdi name="Label1_SDI0" sdi="00" depth="1" parityEnabled="true"/>
