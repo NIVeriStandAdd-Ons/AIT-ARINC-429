@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Project Type="Project" LVVersion="11008008">
+<Project Type="Project" LVVersion="12008004">
 	<Property Name="CCSymbols" Type="Str">AddChannelNum,FALSE;AddPrependingLabelNum,FALSE;</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Property Name="NI.Project.Description" Type="Str"></Property>
@@ -23,16 +23,15 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="NIVS Libs" Type="Folder">
-			<Item Name="Custom Device API.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI Veristand/Custom Device API/Custom Device API.lvlib"/>
-			<Item Name="Custom Device Utility Library.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI Veristand/Custom Device Tools/Custom Device Utility Library/Custom Device Utility Library.lvlib"/>
-		</Item>
 		<Item Name="Custom Device" Type="Folder">
 			<Item Name="Utility" Type="Folder">
 				<Item Name="Print NIVS Debug String.vi" Type="VI" URL="../Utility/Print NIVS Debug String.vi"/>
+				<Item Name="Copy .LLB to NI VeriStand dir.vi" Type="VI" URL="../Utility/Copy .LLB to NI VeriStand dir.vi"/>
 			</Item>
 			<Item Name="Custom Device AIT 429.xml" Type="Document" URL="../Custom Device AIT 429.xml"/>
-			<Item Name="AIT 429 Custom Device.lvlib" Type="Library" URL="../AIT 429 Custom Device.lvlib"/>
+			<Item Name="AIT 429 System Explorer.lvlib" Type="Library" URL="../System Explorer/AIT 429 System Explorer.lvlib"/>
+			<Item Name="AIT 429 Engine.lvlib" Type="Library" URL="../RT Driver/AIT 429 Engine.lvlib"/>
+			<Item Name="ARINC 429 Shared.lvlib" Type="Library" URL="../ARINC 429 Shared.lvlib"/>
 		</Item>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -84,7 +83,8 @@
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="Custom Device Offline API.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI Veristand/Custom Device Offline API/Custom Device Offline API.lvlib"/>
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
-				<Item Name="FTP Session.ctl" Type="VI" URL="/&lt;vilib&gt;/addons/internet/ftp/ftp0.llb/FTP Session.ctl"/>
+				<Item Name="Custom Device API.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI Veristand/Custom Device API/Custom Device API.lvlib"/>
+				<Item Name="Custom Device Utility Library.lvlib" Type="Library" URL="/&lt;vilib&gt;/NI Veristand/Custom Device Tools/Custom Device Utility Library/Custom Device Utility Library.lvlib"/>
 			</Item>
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Owl429.lvlib" Type="Library" URL="/&lt;userlib&gt;/ARINC-429/Owl429.lvlib"/>
@@ -120,6 +120,7 @@
 				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
 				<Property Name="Bld_localDestDir" Type="Path">../Built/AIT 429</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_postActionVIID" Type="Ref">/My Computer/Custom Device/Utility/Copy .LLB to NI VeriStand dir.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{A260088D-E687-4341-9B2B-4AA97CDC8164}</Property>
 				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 				<Property Name="Destination[0].path" Type="Path">../Built/AIT 429</Property>
@@ -133,7 +134,7 @@
 				<Property Name="DestinationCount" Type="Int">4</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applySaveSettings" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A996FE52-4662-4C0B-8B48-5B359B24FE73}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{6AB899B1-5BF2-42EA-A92E-E536C54EA4E0}</Property>
 				<Property Name="Source[0].properties[0].type" Type="Str">Allow debugging</Property>
 				<Property Name="Source[0].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[0].properties[1].type" Type="Str">Remove front panel</Property>
@@ -146,40 +147,32 @@
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Custom Device/Custom Device AIT 429.xml</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[10].Container.applySaveSettings" Type="Bool">true</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 System Explorer.lvlib/System Explorer/Controls</Property>
 				<Property Name="Source[10].properties[0].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[10].properties[0].value" Type="Bool">true</Property>
+				<Property Name="Source[10].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[10].properties[1].type" Type="Str">Remove block diagram</Property>
 				<Property Name="Source[10].properties[1].value" Type="Bool">true</Property>
 				<Property Name="Source[10].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[10].type" Type="Str">Container</Property>
 				<Property Name="Source[11].Container.applySaveSettings" Type="Bool">true</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/System Explorer/Controls</Property>
+				<Property Name="Source[11].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 System Explorer.lvlib/System Explorer/SubVIs</Property>
 				<Property Name="Source[11].properties[0].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[11].properties[0].value" Type="Bool">false</Property>
+				<Property Name="Source[11].properties[0].value" Type="Bool">true</Property>
 				<Property Name="Source[11].properties[1].type" Type="Str">Remove block diagram</Property>
 				<Property Name="Source[11].properties[1].value" Type="Bool">true</Property>
 				<Property Name="Source[11].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[11].type" Type="Str">Container</Property>
-				<Property Name="Source[12].Container.applySaveSettings" Type="Bool">true</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/System Explorer/SubVIs</Property>
-				<Property Name="Source[12].properties[0].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[12].properties[0].value" Type="Bool">true</Property>
-				<Property Name="Source[12].properties[1].type" Type="Str">Remove block diagram</Property>
-				<Property Name="Source[12].properties[1].value" Type="Bool">true</Property>
-				<Property Name="Source[12].propertiesCount" Type="Int">2</Property>
-				<Property Name="Source[12].type" Type="Str">Container</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/System Explorer/Dynamically Called/AIT 429 Initialization VI.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 System Explorer.lvlib/System Explorer/Dynamically Called/AIT 429 Initialization VI.vi</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/System Explorer/Dynamically Called/Pages/AIT 429 Main Page.vi</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 System Explorer.lvlib/System Explorer/Dynamically Called/Pages/AIT 429 Main Page.vi</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="Source[4].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[4].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[4].Container.applySaveSettings" Type="Bool">true</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/System Explorer/Dynamically Called</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 System Explorer.lvlib/System Explorer/Dynamically Called</Property>
 				<Property Name="Source[4].properties[0].type" Type="Str">Remove front panel</Property>
 				<Property Name="Source[4].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[4].properties[1].type" Type="Str">Remove block diagram</Property>
@@ -187,42 +180,44 @@
 				<Property Name="Source[4].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[4].type" Type="Str">Container</Property>
-				<Property Name="Source[5].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/NIVS Libs</Property>
-				<Property Name="Source[5].properties[0].type" Type="Str">Allow debugging</Property>
-				<Property Name="Source[5].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[5].propertiesCount" Type="Int">1</Property>
+				<Property Name="Source[5].Container.applySaveSettings" Type="Bool">true</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Custom Device/ARINC 429 Shared.lvlib/Controls and Global</Property>
+				<Property Name="Source[5].properties[0].type" Type="Str">Remove front panel</Property>
+				<Property Name="Source[5].properties[0].value" Type="Bool">true</Property>
+				<Property Name="Source[5].properties[1].type" Type="Str">Remove block diagram</Property>
+				<Property Name="Source[5].properties[1].value" Type="Bool">true</Property>
+				<Property Name="Source[5].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[5].type" Type="Str">Container</Property>
-				<Property Name="Source[6].Container.applySaveSettings" Type="Bool">true</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/Controls and Global</Property>
-				<Property Name="Source[6].properties[0].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[6].properties[0].value" Type="Bool">true</Property>
-				<Property Name="Source[6].properties[1].type" Type="Str">Remove block diagram</Property>
-				<Property Name="Source[6].properties[1].value" Type="Bool">true</Property>
-				<Property Name="Source[6].propertiesCount" Type="Int">2</Property>
+				<Property Name="Source[6].Container.applyProperties" Type="Bool">true</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/Custom Device</Property>
+				<Property Name="Source[6].properties[0].type" Type="Str">Allow debugging</Property>
+				<Property Name="Source[6].properties[0].value" Type="Bool">false</Property>
+				<Property Name="Source[6].propertiesCount" Type="Int">1</Property>
 				<Property Name="Source[6].type" Type="Str">Container</Property>
-				<Property Name="Source[7].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Custom Device</Property>
-				<Property Name="Source[7].properties[0].type" Type="Str">Allow debugging</Property>
-				<Property Name="Source[7].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[7].propertiesCount" Type="Int">1</Property>
+				<Property Name="Source[7].Container.applySaveSettings" Type="Bool">true</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Custom Device/Utility</Property>
+				<Property Name="Source[7].properties[0].type" Type="Str">Remove front panel</Property>
+				<Property Name="Source[7].properties[0].value" Type="Bool">true</Property>
+				<Property Name="Source[7].properties[1].type" Type="Str">Remove block diagram</Property>
+				<Property Name="Source[7].properties[1].value" Type="Bool">true</Property>
+				<Property Name="Source[7].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[7].type" Type="Str">Container</Property>
-				<Property Name="Source[8].Container.applySaveSettings" Type="Bool">true</Property>
-				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Custom Device/Utility</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver/AIT 429 RT Driver VI.vi</Property>
 				<Property Name="Source[8].properties[0].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[8].properties[0].value" Type="Bool">true</Property>
+				<Property Name="Source[8].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[8].properties[1].type" Type="Str">Remove block diagram</Property>
 				<Property Name="Source[8].properties[1].value" Type="Bool">true</Property>
 				<Property Name="Source[8].propertiesCount" Type="Int">2</Property>
-				<Property Name="Source[8].type" Type="Str">Container</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver/AIT 429 RT Driver VI.vi</Property>
+				<Property Name="Source[8].type" Type="Str">VI</Property>
+				<Property Name="Source[9].Container.applySaveSettings" Type="Bool">true</Property>
+				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver</Property>
 				<Property Name="Source[9].properties[0].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[9].properties[0].value" Type="Bool">false</Property>
+				<Property Name="Source[9].properties[0].value" Type="Bool">true</Property>
 				<Property Name="Source[9].properties[1].type" Type="Str">Remove block diagram</Property>
 				<Property Name="Source[9].properties[1].value" Type="Bool">true</Property>
 				<Property Name="Source[9].propertiesCount" Type="Int">2</Property>
-				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">13</Property>
+				<Property Name="Source[9].type" Type="Str">Container</Property>
+				<Property Name="SourceCount" Type="Int">12</Property>
 			</Item>
 			<Item Name="Engine Release" Type="Source Distribution">
 				<Property Name="Bld_buildCacheID" Type="Str">{2F5C4016-F6CF-470D-82C3-E6F8FCCA08F3}</Property>
@@ -232,6 +227,7 @@
 				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
 				<Property Name="Bld_localDestDir" Type="Path">../Built/AIT 429</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_postActionVIID" Type="Ref">/My Computer/Custom Device/Utility/Copy .LLB to NI VeriStand dir.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{DC1F0ED9-B7AD-43CD-A7A3-775F3CB9BF63}</Property>
 				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 				<Property Name="Destination[0].path" Type="Path">../Built/AIT 429</Property>
@@ -245,7 +241,7 @@
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applySaveSettings" Type="Bool">true</Property>
 				<Property Name="Source[0].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A996FE52-4662-4C0B-8B48-5B359B24FE73}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{6AB899B1-5BF2-42EA-A92E-E536C54EA4E0}</Property>
 				<Property Name="Source[0].properties[0].type" Type="Str">Allow debugging</Property>
 				<Property Name="Source[0].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[0].properties[1].type" Type="Str">Remove front panel</Property>
@@ -255,7 +251,7 @@
 				<Property Name="Source[0].propertiesCount" Type="Int">3</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver/AIT 429 RT Driver VI.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver/AIT 429 RT Driver VI.vi</Property>
 				<Property Name="Source[1].properties[0].type" Type="Str">Remove front panel</Property>
 				<Property Name="Source[1].properties[0].value" Type="Bool">true</Property>
 				<Property Name="Source[1].properties[1].type" Type="Str">Remove block diagram</Property>
@@ -263,131 +259,121 @@
 				<Property Name="Source[1].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[10].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[10].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[10].Container.applySaveSettings" Type="Bool">true</Property>
-				<Property Name="Source[10].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/SubVIs</Property>
-				<Property Name="Source[10].properties[0].type" Type="Str">Allow debugging</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver/Loops/HWIn Loop.vi</Property>
+				<Property Name="Source[10].properties[0].type" Type="Str">Remove front panel</Property>
 				<Property Name="Source[10].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[10].properties[1].type" Type="Str">Remove front panel</Property>
+				<Property Name="Source[10].properties[1].type" Type="Str">Remove block diagram</Property>
 				<Property Name="Source[10].properties[1].value" Type="Bool">true</Property>
-				<Property Name="Source[10].properties[2].type" Type="Str">Remove block diagram</Property>
-				<Property Name="Source[10].properties[2].value" Type="Bool">true</Property>
-				<Property Name="Source[10].propertiesCount" Type="Int">3</Property>
-				<Property Name="Source[10].type" Type="Str">Container</Property>
-				<Property Name="Source[11].Container.applySaveSettings" Type="Bool">true</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver/Loops/SubVIs</Property>
+				<Property Name="Source[10].propertiesCount" Type="Int">2</Property>
+				<Property Name="Source[10].type" Type="Str">VI</Property>
+				<Property Name="Source[11].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver/Loops/HWOut Loop.vi</Property>
 				<Property Name="Source[11].properties[0].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[11].properties[0].value" Type="Bool">true</Property>
+				<Property Name="Source[11].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[11].properties[1].type" Type="Str">Remove block diagram</Property>
 				<Property Name="Source[11].properties[1].value" Type="Bool">true</Property>
 				<Property Name="Source[11].propertiesCount" Type="Int">2</Property>
-				<Property Name="Source[11].type" Type="Str">Container</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver/Loops/HWIn Loop.vi</Property>
+				<Property Name="Source[11].type" Type="Str">VI</Property>
+				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver/Loops/Report Errors.vi</Property>
 				<Property Name="Source[12].properties[0].type" Type="Str">Remove front panel</Property>
 				<Property Name="Source[12].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[12].properties[1].type" Type="Str">Remove block diagram</Property>
 				<Property Name="Source[12].properties[1].value" Type="Bool">true</Property>
 				<Property Name="Source[12].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[12].type" Type="Str">VI</Property>
-				<Property Name="Source[13].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver/Loops/HWOut Loop.vi</Property>
+				<Property Name="Source[13].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver/Loops/TransCfg Loop.vi</Property>
 				<Property Name="Source[13].properties[0].type" Type="Str">Remove front panel</Property>
 				<Property Name="Source[13].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[13].properties[1].type" Type="Str">Remove block diagram</Property>
 				<Property Name="Source[13].properties[1].value" Type="Bool">true</Property>
 				<Property Name="Source[13].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[13].type" Type="Str">VI</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver/Loops/Report Errors.vi</Property>
-				<Property Name="Source[14].properties[0].type" Type="Str">Remove front panel</Property>
+				<Property Name="Source[14].Container.applyProperties" Type="Bool">true</Property>
+				<Property Name="Source[14].Container.applySaveSettings" Type="Bool">true</Property>
+				<Property Name="Source[14].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Custom Device</Property>
+				<Property Name="Source[14].properties[0].type" Type="Str">Allow debugging</Property>
 				<Property Name="Source[14].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[14].properties[1].type" Type="Str">Remove block diagram</Property>
+				<Property Name="Source[14].properties[1].type" Type="Str">Remove front panel</Property>
 				<Property Name="Source[14].properties[1].value" Type="Bool">true</Property>
-				<Property Name="Source[14].propertiesCount" Type="Int">2</Property>
-				<Property Name="Source[14].type" Type="Str">VI</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver/Loops/TransCfg Loop.vi</Property>
-				<Property Name="Source[15].properties[0].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[15].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[15].properties[1].type" Type="Str">Remove block diagram</Property>
-				<Property Name="Source[15].properties[1].value" Type="Bool">true</Property>
-				<Property Name="Source[15].propertiesCount" Type="Int">2</Property>
-				<Property Name="Source[15].type" Type="Str">VI</Property>
-				<Property Name="Source[16].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[16].itemID" Type="Ref">/My Computer/Custom Device</Property>
-				<Property Name="Source[16].properties[0].type" Type="Str">Allow debugging</Property>
-				<Property Name="Source[16].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[16].propertiesCount" Type="Int">1</Property>
-				<Property Name="Source[16].type" Type="Str">Container</Property>
+				<Property Name="Source[14].properties[2].type" Type="Str">Remove block diagram</Property>
+				<Property Name="Source[14].properties[2].value" Type="Bool">true</Property>
+				<Property Name="Source[14].propertiesCount" Type="Int">3</Property>
+				<Property Name="Source[14].type" Type="Str">Container</Property>
+				<Property Name="Source[15].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib</Property>
+				<Property Name="Source[15].Library.allowMissingMembers" Type="Bool">true</Property>
+				<Property Name="Source[15].type" Type="Str">Library</Property>
 				<Property Name="Source[2].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[2].Container.applyProperties" Type="Bool">true</Property>
+				<Property Name="Source[2].Container.applySaveSettings" Type="Bool">true</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/NIVS Libs</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Custom Device/Utility</Property>
 				<Property Name="Source[2].properties[0].type" Type="Str">Allow debugging</Property>
 				<Property Name="Source[2].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[2].propertiesCount" Type="Int">1</Property>
+				<Property Name="Source[2].properties[1].type" Type="Str">Remove front panel</Property>
+				<Property Name="Source[2].properties[1].value" Type="Bool">true</Property>
+				<Property Name="Source[2].properties[2].type" Type="Str">Remove block diagram</Property>
+				<Property Name="Source[2].properties[2].value" Type="Bool">true</Property>
+				<Property Name="Source[2].propertiesCount" Type="Int">3</Property>
 				<Property Name="Source[2].type" Type="Str">Container</Property>
-				<Property Name="Source[3].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[3].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[3].Container.applySaveSettings" Type="Bool">true</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Custom Device/Utility</Property>
-				<Property Name="Source[3].properties[0].type" Type="Str">Allow debugging</Property>
-				<Property Name="Source[3].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[3].properties[1].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[3].properties[1].value" Type="Bool">true</Property>
-				<Property Name="Source[3].properties[2].type" Type="Str">Remove block diagram</Property>
-				<Property Name="Source[3].properties[2].value" Type="Bool">true</Property>
-				<Property Name="Source[3].propertiesCount" Type="Int">3</Property>
-				<Property Name="Source[3].type" Type="Str">Container</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 System Explorer.lvlib</Property>
+				<Property Name="Source[3].Library.allowMissingMembers" Type="Bool">true</Property>
+				<Property Name="Source[3].type" Type="Str">Library</Property>
+				<Property Name="Source[4].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[4].Container.applyProperties" Type="Bool">true</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib</Property>
-				<Property Name="Source[4].Library.allowMissingMembers" Type="Bool">true</Property>
-				<Property Name="Source[4].type" Type="Str">Library</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Custom Device/ARINC 429 Shared.lvlib/Controls and Global</Property>
+				<Property Name="Source[4].properties[0].type" Type="Str">Allow debugging</Property>
+				<Property Name="Source[4].properties[0].value" Type="Bool">false</Property>
+				<Property Name="Source[4].propertiesCount" Type="Int">1</Property>
+				<Property Name="Source[4].type" Type="Str">Container</Property>
 				<Property Name="Source[5].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[5].Container.applyProperties" Type="Bool">true</Property>
+				<Property Name="Source[5].Container.applySaveSettings" Type="Bool">true</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/Controls and Global</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 System Explorer.lvlib/System Explorer</Property>
 				<Property Name="Source[5].properties[0].type" Type="Str">Allow debugging</Property>
 				<Property Name="Source[5].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[5].propertiesCount" Type="Int">1</Property>
+				<Property Name="Source[5].properties[1].type" Type="Str">Remove front panel</Property>
+				<Property Name="Source[5].properties[1].value" Type="Bool">true</Property>
+				<Property Name="Source[5].properties[2].type" Type="Str">Remove block diagram</Property>
+				<Property Name="Source[5].properties[2].value" Type="Bool">true</Property>
+				<Property Name="Source[5].propertiesCount" Type="Int">3</Property>
 				<Property Name="Source[5].type" Type="Str">Container</Property>
 				<Property Name="Source[6].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[6].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[6].Container.applySaveSettings" Type="Bool">true</Property>
 				<Property Name="Source[6].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/System Explorer</Property>
-				<Property Name="Source[6].properties[0].type" Type="Str">Allow debugging</Property>
-				<Property Name="Source[6].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[6].properties[1].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[6].properties[1].value" Type="Bool">true</Property>
-				<Property Name="Source[6].properties[2].type" Type="Str">Remove block diagram</Property>
-				<Property Name="Source[6].properties[2].value" Type="Bool">true</Property>
-				<Property Name="Source[6].propertiesCount" Type="Int">3</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver/Loops</Property>
 				<Property Name="Source[6].type" Type="Str">Container</Property>
 				<Property Name="Source[7].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[7].Container.applySaveSettings" Type="Bool">true</Property>
 				<Property Name="Source[7].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver/Loops</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver/RT Controls</Property>
+				<Property Name="Source[7].properties[0].type" Type="Str">Remove front panel</Property>
+				<Property Name="Source[7].properties[0].value" Type="Bool">true</Property>
+				<Property Name="Source[7].properties[1].type" Type="Str">Remove block diagram</Property>
+				<Property Name="Source[7].properties[1].value" Type="Bool">true</Property>
+				<Property Name="Source[7].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[7].type" Type="Str">Container</Property>
 				<Property Name="Source[8].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[8].Container.applySaveSettings" Type="Bool">true</Property>
 				<Property Name="Source[8].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver/RT Controls</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver/SubVIs</Property>
 				<Property Name="Source[8].properties[0].type" Type="Str">Remove front panel</Property>
 				<Property Name="Source[8].properties[0].value" Type="Bool">true</Property>
 				<Property Name="Source[8].properties[1].type" Type="Str">Remove block diagram</Property>
 				<Property Name="Source[8].properties[1].value" Type="Bool">true</Property>
 				<Property Name="Source[8].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[8].type" Type="Str">Container</Property>
-				<Property Name="Source[9].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[9].Container.applySaveSettings" Type="Bool">true</Property>
-				<Property Name="Source[9].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Custom Device.lvlib/RT Driver/SubVIs</Property>
+				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Custom Device/AIT 429 Engine.lvlib/RT Driver/Loops/SubVIs</Property>
 				<Property Name="Source[9].properties[0].type" Type="Str">Remove front panel</Property>
 				<Property Name="Source[9].properties[0].value" Type="Bool">true</Property>
 				<Property Name="Source[9].properties[1].type" Type="Str">Remove block diagram</Property>
 				<Property Name="Source[9].properties[1].value" Type="Bool">true</Property>
 				<Property Name="Source[9].propertiesCount" Type="Int">2</Property>
 				<Property Name="Source[9].type" Type="Str">Container</Property>
-				<Property Name="SourceCount" Type="Int">17</Property>
+				<Property Name="SourceCount" Type="Int">16</Property>
 			</Item>
 		</Item>
 	</Item>
