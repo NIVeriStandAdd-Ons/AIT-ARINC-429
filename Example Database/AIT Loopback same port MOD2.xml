@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board429 xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aviftech.com/Schemas/Databus/ file:///C:/Program%20Files%20(x86)/AIT/Flight%20Simulyzer%203%20(VISA)/AIT_429.xsd" sdiModeEnabled="false">
+        <channel429 channelNumber="2" name="001" speed="92300">
+        <Rx>            
+            <labels>                
+                <label labelId="08">
+                    <buffer name="001" depth="1" parityEnabled="true"/>
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+</board429>

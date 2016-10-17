@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board429 xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aviftech.com/Schemas/Databus/ file:///C:/Program%20Files%20(x86)/AIT/Flight%20Simulyzer%20(VISA)/AIT_429.xsd" dataRateModifier="STANDARD" lowSpeedSelection="STANDARD_LOW_SPEED" sdiModeEnabled="false" name="BT_TestBoard">
+    <boardIndex>1</boardIndex>
+    <channel429 channelNumber="1" name="Channel1Rx" channelSpeed="HIGH_SPEED_CHANNEL">
+        <Rx>
+            <chronMonitor/>
+            <labels>
+                <label labelId="02">
+                    <buffer name="Label2_NOSDI" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Param1Label2" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="False" /> -->
+                    <!-- <parameter name="Param2Label2" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="00">
+                    <bufferSdi name="Label0_SDI0" sdi="00" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Param1Label0_SDI0" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                    <!-- <parameter name="Param2Label0_SDI0" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                    <bufferSdi name="Label0_SDI1" sdi="01" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Param1Label0_SDI1" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                    <!-- <parameter name="Param2Label0_SDI1" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                    <bufferSdi name="Label0_SDI2" sdi="02" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Param1Label0_SDI2" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                    <!-- <parameter name="Param2Label0_SDI2" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                    <bufferSdi name="Label0_SDI3" sdi="03" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Param1Label0_SDI3" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                    <!-- <parameter name="Param2Label0_SDI3" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+					<!-- <parameter name="Label0_SDI3_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="01">
+                    <bufferSdi name="Label1_SDI0" sdi="00" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Param1Label1_SDI0" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                    <!-- <parameter name="Param2Label1_SDI0" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                    <bufferSdi name="Label1_SDI1" sdi="01" depth="1" parityEnabled="true"/>
+                    <!-- <parameter name="Param1Label1_SDI1" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                    <!-- <parameter name="Param2Label1_SDI1" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+    <channel429 channelNumber="2" name="Channel2Tx" channelSpeed="HIGH_SPEED_CHANNEL">
+        <Tx amplitudeVoltage="10" externalTriggerLine="0" maxAsyncronousBufferWords="1024" parityEnabled="true" startWithExternalTrigger="false">
+            <TxScheduledLabel name="Label0_SDI0" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="0">
+                    <data21>000001</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label0_SDI1" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="1">
+                    <data21>000002</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label0_SDI2" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="2">
+                    <data21>000003</data21>
+                </wordBuffer_SDI>
+                <!-- <parameter name="Param1Label0_SDI2" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                <!-- <parameter name="Param2Label0_SDI2" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label0_SDI3" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="3">
+                    <data21>000004</data21>
+                </wordBuffer_SDI>
+                <!-- <parameter name="Param1Label0_SDI3" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                <!-- <parameter name="Param2Label0_SDI3" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label1_SDI0" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="01" sdi="0">
+                    <data21>000006</data21>
+                </wordBuffer_SDI>
+                <!-- <parameter name="Param1Label1_SDI0" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                <!-- <parameter name="Param2Label1_SDI0" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label1_SDI1" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="01" sdi="1">
+                    <data21>000007</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label2_NOSDI" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer label="02">
+                    <data23>000008</data23>
+                </wordBuffer>
+                <!-- <parameter name="Param1Label2" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="False" /> -->
+                <!-- <parameter name="Param2Label2" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+        </Tx>
+    </channel429>
+	<channel429 channelNumber="3" name="Channel3Tx" channelSpeed="HIGH_SPEED_CHANNEL">
+        <Tx amplitudeVoltage="10" externalTriggerLine="0" maxAsyncronousBufferWords="1024" parityEnabled="true" startWithExternalTrigger="false">
+            <TxScheduledLabel name="Label0_SDI0" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="0">
+                    <data21>000001</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label0_SDI1" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="1">
+                    <data21>000002</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label0_SDI2" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="2">
+                    <data21>000003</data21>
+                </wordBuffer_SDI>
+                <!-- <parameter name="Param1Label0_SDI2" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                <!-- <parameter name="Param2Label0_SDI2" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label0_SDI3" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="00" sdi="3">
+                    <data21>000004</data21>
+                </wordBuffer_SDI>
+                <!-- <parameter name="Param1Label0_SDI3" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                <!-- <parameter name="Param2Label0_SDI3" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label1_SDI0" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="01" sdi="0">
+                    <data21>000006</data21>
+                </wordBuffer_SDI>
+                <!-- <parameter name="Param1Label1_SDI0" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="True" /> -->
+                <!-- <parameter name="Param2Label1_SDI0" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label1_SDI1" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="01" sdi="1">
+                    <data21>000007</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Label2_NOSDI" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer label="02">
+                    <data23>000008</data23>
+                </wordBuffer>
+                <!-- <parameter name="Param1Label2" startBit="11" numberBits="10" scaleFactor="0.123" scaleOffset="123" signed="False" /> -->
+                <!-- <parameter name="Param2Label2" startBit="25" numberBits="2" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+        </Tx>
+    </channel429>
+</board429>

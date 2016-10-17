@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board429 xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aviftech.com/Schemas/Databus/ file:///C:/Program%20Files%20(x86)/AIT/Flight%20Simulyzer%20(VISA)/AIT_429.xsd" dataRateModifier="STANDARD" lowSpeedSelection="STANDARD_LOW_SPEED" sdiModeEnabled="false" name="SEA_9811_simIO">
+    <boardIndex>1</boardIndex>
+    <channel429 channelNumber="1" name="Channel0Rx" channelSpeed="HIGH_SPEED_CHANNEL">
+        <Rx>
+            <chronMonitor/>
+            <labels>
+                <label labelId="00">
+                    <bufferSdi name="Label0_SDI0" sdi="00" depth="1" parityEnabled="false"/>
+                    <!-- <parameter name="Param1Label0_SDI0" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                    <!-- <parameter name="Label0_SDI0_Data" startBit="10" numberBits="19" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+	<channel429 channelNumber="4" name="Channel3Rx" channelSpeed="HIGH_SPEED_CHANNEL">
+        <Rx>
+            <chronMonitor/>
+            <labels>
+                <label labelId="03">
+                    <bufferSdi name="Label3_SDI0" sdi="00" depth="1" parityEnabled="false"/>
+					<!-- <parameter name="Param1Label3_SDI1" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+					<!-- <parameter name="Label3_SDI1_Data" startBit="10" numberBits="19" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+	<channel429 channelNumber="6" name="Channel5Rx" channelSpeed="HIGH_SPEED_CHANNEL">
+        <Rx>
+            <chronMonitor/>
+			<labels>
+                <label labelId="05">
+                    <bufferSdi name="Label5_SDI0" sdi="00" depth="1" parityEnabled="false"/>
+                    <!-- <parameter name="Param1Label5_SDI1" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                    <!-- <parameter name="Label5_SDI1_Data" startBit="10" numberBits="19" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+</board429>

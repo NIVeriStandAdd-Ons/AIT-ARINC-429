@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nidocument>
+<nicomment>
+errors for the ARINC custom device for NI VeriStand
+<nifamily familyname="ARINC CD error codes" displayname="ARINC CD error codes">
+</nifamily>
+</nicomment>
+<nierror code="5000">
+timestamp part 1 was not received from FPGA
+</nierror>
+</nidocument>

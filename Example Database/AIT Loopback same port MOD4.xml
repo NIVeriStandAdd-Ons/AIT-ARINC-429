@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board429 xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aviftech.com/Schemas/Databus/ file:///C:/Program%20Files%20(x86)/AIT/Flight%20Simulyzer%203%20(VISA)/AIT_429.xsd" sdiModeEnabled="false">
+    <channel429 channelNumber="1">
+        <Rx>
+            <chronMonitor>
+                <RxStartTrigger>
+                    <RxSimpleTrigger strobeLine="0"/>
+                </RxStartTrigger>
+            </chronMonitor>
+            <labels>
+                <label labelId="00">
+                    <buffer name="A" depth="1" parityEnabled="true"/>
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+    <channel429 channelNumber="2">
+        <Tx amplitudeVoltage="10" externalTriggerLine="0" maxAsyncronousBufferWords="1024" parityEnabled="true" startWithExternalTrigger="false">
+            <TxScheduledLabel name="Transfer_0" enabled="true" transferRate="1" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer label="00">
+                    <data23>000000</data23>
+                </wordBuffer>
+            </TxScheduledLabel>
+        </Tx>
+    </channel429>
+</board429>

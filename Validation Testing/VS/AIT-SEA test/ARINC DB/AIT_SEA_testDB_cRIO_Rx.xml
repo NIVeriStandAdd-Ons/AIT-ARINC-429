@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board429 xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aviftech.com/Schemas/Databus/ file:///C:/Program%20Files%20(x86)/AIT/Flight%20Simulyzer%202%20(VISA)/AIT_429.xsd" name="SEA_9811_RX" sdiModeEnabled="false">
+    <boardIndex>1</boardIndex>
+    <channel429 channelNumber="1" name="Rx1">
+        <Rx>
+            <chronMonitor>
+                <RxStartTrigger>
+                    <RxSimpleTrigger strobeLine="0"/>
+                </RxStartTrigger>
+            </chronMonitor>
+            <labels>
+                <label labelId="00">
+                    <buffer name="1_Rx0" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="1_Rx0_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="01">
+                    <buffer name="1_Rx1" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="1_Rx1_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="02">
+                    <buffer name="1_Rx2" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="1_Rx2_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+	<channel429 channelNumber="2" name="Rx2">
+        <Rx>
+            <chronMonitor>
+                <RxStartTrigger>
+                    <RxSimpleTrigger strobeLine="0"/>
+                </RxStartTrigger>
+            </chronMonitor>
+            <labels>
+                <label labelId="00">
+                    <buffer name="2_Rx0" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="2_Rx0_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+					<!-- <parameter name="2_Rx0_Data" startBit="10" numberBits="19" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="01">
+                    <buffer name="2_Rx1" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="2_Rx1_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="02">
+                    <buffer name="2_Rx2" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="2_Rx2_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+	<channel429 channelNumber="3" name="Rx3">
+        <Rx>
+            <chronMonitor>
+                <RxStartTrigger>
+                    <RxSimpleTrigger strobeLine="0"/>
+                </RxStartTrigger>
+            </chronMonitor>
+            <labels>
+                <label labelId="00">
+                    <buffer name="3_Rx0" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="3_Rx0_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="01">
+                    <buffer name="3_Rx1" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="3_Rx1_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="02">
+                    <buffer name="3_Rx2" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="3_Rx2_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+	<channel429 channelNumber="4" name="Rx4">
+        <Rx>
+            <chronMonitor>
+                <RxStartTrigger>
+                    <RxSimpleTrigger strobeLine="0"/>
+                </RxStartTrigger>
+            </chronMonitor>
+            <labels>
+                <label labelId="00">
+                    <buffer name="4_Rx0" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="4_Rx0_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="01">
+                    <buffer name="4_Rx1" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="4_Rx1_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="02">
+                    <buffer name="4_Rx2" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="4_Rx1_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+	<channel429 channelNumber="5" name="Rx5">
+        <Rx>
+            <chronMonitor>
+                <RxStartTrigger>
+                    <RxSimpleTrigger strobeLine="0"/>
+                </RxStartTrigger>
+            </chronMonitor>
+            <labels>
+                <label labelId="00">
+                    <buffer name="5_Rx0" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="5_Rx0_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="01">
+                    <buffer name="5_Rx1" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="5_Rx1_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+                <label labelId="02">
+                    <buffer name="5_Rx2" depth="1" parityEnabled="true"/>
+					<!-- <parameter name="5_Rx2_ALL" startBit="0" numberBits="32" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+</board429>

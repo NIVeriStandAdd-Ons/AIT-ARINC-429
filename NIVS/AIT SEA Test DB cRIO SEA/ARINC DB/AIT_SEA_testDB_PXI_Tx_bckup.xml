@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board429 xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aviftech.com/Schemas/Databus/ file:///C:/Program%20Files%20(x86)/AIT/Flight%20Simulyzer%202%20(VISA)/AIT_429.xsd" name="AIT_PXI_board" sdiModeEnabled="false">
+    <boardIndex>1</boardIndex>
+    <channel429 channelNumber="3" name="Tx3">
+        <Tx amplitudeVoltage="10" externalTriggerLine="0" maxAsyncronousBufferWords="1024" parityEnabled="true" startWithExternalTrigger="false">
+            <TxScheduledLabel name="Transfer_0" enabled="true" transferRate="1000" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer label="00">
+                    <data23>000000</data23>
+                </wordBuffer>
+				<!-- <parameter name="Transfer_0_Data" startBit="10" numberBits="19" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Transfer_1" enabled="true" transferRate="1000" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer label="01">
+                    <data23>000000</data23>
+                </wordBuffer>
+				<!-- <parameter name="Transfer_1_Data" startBit="10" numberBits="19" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+            <TxScheduledLabel name="Transfer_2" enabled="true" transferRate="1000" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer label="02">
+                    <data23>000000</data23>
+                </wordBuffer>
+				<!-- <parameter name="Transfer_2_Data" startBit="10" numberBits="19" scaleFactor="1" scaleOffset="0" signed="False" /> -->
+            </TxScheduledLabel>
+        </Tx>
+    </channel429>
+</board429>

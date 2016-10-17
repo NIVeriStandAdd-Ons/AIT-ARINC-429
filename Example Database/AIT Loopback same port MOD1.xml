@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board429 xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aviftech.com/Schemas/Databus/ file:///C:/Program%20Files%20(x86)/AIT/Flight%20Simulyzer%203%20(VISA)/AIT_429.xsd" sdiModeEnabled="false">
+    <channel429 channelNumber="1" name="WheelOutput" speed="92300">
+        <Tx amplitudeVoltage="10" externalTriggerLine="0" maxAsyncronousBufferWords="1024" parityEnabled="true" startWithExternalTrigger="false">
+            <TxScheduledLabel name="LeftWheelSpeedOut" enabled="true" transferRate="5" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="06" sdi="3">
+                    <data21>000006</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="RightWheelSpeedOut" enabled="true" transferRate="5" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="07" sdi="3">
+                    <data21>000007</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+            <TxScheduledLabel name="AltitudeOut" enabled="true" transferRate="5" errorInjectionType="NONE" transferCount="0" transferGap="4">
+                <wordBuffer_SDI label="08" sdi="3">
+                    <data21>000008</data21>
+                </wordBuffer_SDI>
+            </TxScheduledLabel>
+        </Tx>
+        <Rx>
+            <chronMonitor>
+                <RxStartTrigger>
+                    <RxSimpleTrigger strobeLine="0"/>
+                </RxStartTrigger>
+            </chronMonitor>
+            <labels>
+                <label labelId="06">
+                    <bufferSdi name="LeftWheelSpeedOutMon" sdi="03" depth="1" parityEnabled="false"/>
+                </label>
+                <label labelId="08">
+                    <bufferSdi name="AltitudeOutMon" sdi="03" depth="1" parityEnabled="true"/>
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+    <channel429 channelNumber="2" name="WheelInput" speed="92300">
+        <Rx>
+            <chronMonitor>
+                <RxStartTrigger>
+                    <RxSimpleTrigger strobeLine="0"/>
+                </RxStartTrigger>
+            </chronMonitor>
+            <labels>
+                <label labelId="06">
+                    <buffer name="LeftWheelSpeedIn" depth="1" parityEnabled="true"/>
+                </label>
+                <label labelId="07">
+                    <buffer name="RightWheelSpeedIn" depth="1" parityEnabled="true"/>
+                </label>
+                <label labelId="08">
+                    <buffer name="AltitudeIn" depth="1" parityEnabled="true"/>
+                </label>
+            </labels>
+        </Rx>
+    </channel429>
+</board429>

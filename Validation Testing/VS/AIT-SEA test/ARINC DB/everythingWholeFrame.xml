@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<board429 xmlns="http://www.aviftech.com/Schemas/Databus/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aviftech.com/Schemas/Databus/ file:///C:/Program%20Files%20(x86)/AIT/Flight%20Simulyzer/AIT_429.xsd" dataRateModifier="STANDARD" lowSpeedSelection="INTERMEDIATE_LOW_SPEED" sdiModeEnabled="false">
+    <boardIndex>1</boardIndex>
+        <channel429 channelNumber="1" name="ADP_SIMTEC" channelSpeed="HIGH_SPEED_CHANNEL">
+            <Rx>
+                <chronMonitor/>
+                <labels>
+                    <label labelId="83">
+                        <buffer name="L203_Altitude" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                             </label>
+                    <label labelId="84">
+                        <buffer name="L204_Baro_Corrected_Altitude" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="88">
+                        <buffer name="L210_True_Airspeed" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="8A">
+                        <buffer name="L212_Altitude_Rate" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="8D">
+                        <buffer name="L215_Impact_Pressure" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="B8">
+                        <buffer name="L270_Status_Information_DW1" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="B9">
+                        <buffer name="L271_Heater_Mode_DW2" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="C8">
+                        <buffer name="L310_QC_raw" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="C9">
+                        <buffer name="L311_PS_raw" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="CA">
+                        <buffer name="L312_IAT" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="CB">
+                        <buffer name="L313_BAT" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D0">
+                        <buffer name="L320_DR" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D1">
+                        <buffer name="L321_HTR" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D2">
+                        <buffer name="L322_CUR" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F0">
+                        <buffer name="L360_PS" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F1">
+                        <buffer name="L361_PT" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F2">
+                        <buffer name="L362_QC" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F3">
+                        <buffer name="L363_AoA" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F4">
+                        <buffer name="L364_AoS" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F5">
+                        <buffer name="L365_TAT" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F6">
+                        <buffer name="L366_SAT" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F7">
+                        <buffer name="L367_CR" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F8">
+                        <buffer name="L370_Mach" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F9">
+                        <buffer name="L371_CAS" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FA">
+                        <buffer name="L372_TAS" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FB">
+                        <buffer name="L373_HP" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FC">
+                        <buffer name="L374_dP_AoA" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FD">
+                        <buffer name="L375_dP_AoS" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FE">
+                        <buffer name="L376_HBARO" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                </labels>
+            </Rx>
+        </channel429>
+            <channel429 channelNumber="2" name="AH-1000" channelSpeed="HIGH_SPEED_CHANNEL">
+            <Rx>
+                <chronMonitor/>
+                <labels>
+                    <label labelId="D0">
+                        <buffer name="L320_Magnetic_Heading" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="0C">
+                        <buffer name="L014_Magnetic_Heading_BCD" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="C0">
+                        <buffer name="L300_MSU_heading" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D4">
+                        <buffer name="L324_Pitch_Angle" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D5">
+                        <buffer name="L325_Roll_Angle" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                  
+                    <label labelId="DE">
+                        <buffer name="Mag_Body_Pitch" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="DF">
+                        <buffer name="Mag_Body_Roll" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="C1">
+                        <buffer name="Mag_Body_Yaw" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    
+                    <label labelId="D6">
+                        <buffer name="L326_Body_Pitch_Rate" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D7">
+                        <buffer name="L327_Body_Roll_Rate" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D8">
+                        <buffer name="L330_Body_Yaw_Rate" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D9">
+                        <buffer name="L331_Body_Longitudinal_Acceleration" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="DA">
+                        <buffer name="L332_Body_Lateral_Acceleration" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="DB">
+                        <buffer name="L333_Body_Normal_Acceleration" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                     <label labelId="F4">
+                        <buffer name="L364_Vertical_Acceleration" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F5">
+                        <buffer name="L365_Inertial_Vertical_Speed" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D2">
+                        <buffer name="L322_Flight_Path_Angle" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F1">
+                        <buffer name="L361_Inertial_Attitude" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                     <label labelId="B8">
+                        <buffer name="L270_AHRS_Discrete_1" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="B9">
+                        <buffer name="L271_AHRS_Discrete_2" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                </labels>
+            </Rx>
+        </channel429>
+        <channel429 channelNumber="3" name="HG-2021" channelSpeed="HIGH_SPEED_CHANNEL">
+            <Rx>
+                <chronMonitor/>
+                <labels>
+                    <label labelId="30">
+                        <buffer name="L60_Measurement_Status" depth="1" parityEnabled="true"/>
+                         <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="31">
+                        <buffer name="L61_Pseudo_Range" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->       
+                    </label>
+                    <label labelId="32">
+                        <buffer name="L62_Pseudo_Range_Fine" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->                    
+                    </label>
+                    <label labelId="33">
+                        <buffer name="L63_Range_Rate" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="34">
+                        <buffer name="L64_Delta_Range" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> --> 
+                    </label>
+                    <label labelId="35">
+                        <buffer name="L65_Sv_Position_X" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->                    
+                    </label>
+                    <label labelId="36">
+                        <buffer name="L66_Sv_Position_X_Fine" depth="1" parityEnabled="true"/>                                                      
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="38">
+                        <buffer name="L70_Sv_Position_Y" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="39">
+                        <buffer name="L71_Sv_Position_Y_Fine" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="3A">
+                        <buffer name="L72_Sv_Position_Z" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->                   
+                    </label>
+                    <label labelId="3B">
+                        <buffer name="L73_Sv_Position_Z_Fine" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="3C">
+                        <buffer name="L74_UTC_Measure_Time" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="3E">
+                        <buffer name="L76_GPS_Altitude" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="41">
+                        <buffer name="L101_HDOP" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="42">
+                        <buffer name="L102_VDOP" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->                    
+                    </label>
+                    <label labelId="43">
+                        <buffer name="L103_GPS_Track_Angle" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="48">
+                        <buffer name="L110_GPS_Latitude" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="49">
+                        <buffer name="L111_GPS_Longitude" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="4A">
+                        <buffer name="L112_GPS_Ground_Speed" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="50">
+                        <buffer name="L120_GPS_Latitude_Fine" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->                    
+                    </label>
+                    <label labelId="51">
+                        <buffer name="L121_GPS_Longitude_Fine" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="55">
+                        <buffer name="L125_UTC_1" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="58">
+                        <buffer name="L130_AUT_Horiz_Integ_Limit" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="5B">
+                        <buffer name="L133_AUT_Vert_Integ_Limit" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="5D">
+                        <buffer name="L135_Approach_Area_Vil" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="5E">
+                        <buffer name="L136_Vertical_Fom" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="60">
+                        <buffer name="L140_UTC_Fine" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="61">
+                        <buffer name="L141_UTC_Fine_Fractions" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="63">
+                        <buffer name="L143_Approach_Area_HIL" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="68">
+                        <buffer name="L150_UTC_2" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="6E">
+                        <buffer name="L156_Maintenance_1" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="6F">
+                        <buffer name="L157_Maintenance_2" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="72">
+                        <buffer name="L162_DEST_WPT_ETA" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="73">
+                        <buffer name="L163_ALT_WPT_ETA" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="75">
+                        <buffer name="L165_Vertical_Velocity" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="76">
+                        <buffer name="L166_N_S_Velocity" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="7C">
+                        <buffer name="L174_E_W_Velocity" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="A7">
+                        <buffer name="L247_Horizontal_FOM" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->  
+                    </label>
+                    <label labelId="B0">
+                        <buffer name="L260_Date" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="BB">
+                        <buffer name="L273_GPS_Sensor_Status" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->                    
+                    </label>
+                    <label labelId="E3">
+                        <buffer name="L343_DEST_WPT_HIL" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="E7">
+                        <buffer name="L347_ALT_WPT_HIL" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="EA">
+                        <buffer name="L352_Maintenance_Disc_1" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="EC">
+                        <buffer name="L354_Counter" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="ED">
+                        <buffer name="L355_Maintenance_Disc_2" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FF">
+                        <buffer name="L377_Equipment_ID" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> --> 
+                    </label>
+                </labels>
+            </Rx>
+        </channel429>
+        
+        <channel429 channelNumber="4" name="ADP_SIMTEC_2" channelSpeed="HIGH_SPEED_CHANNEL">
+            <Rx>
+                <chronMonitor/>
+                <labels>
+                    <label labelId="83">
+                        <buffer name="L203_Altitude" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                             </label>
+                    <label labelId="84">
+                        <buffer name="L204_Baro_Corrected_Altitude" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="88">
+                        <buffer name="L210_True_Airspeed" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="8A">
+                        <buffer name="L212_Altitude_Rate" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="8D">
+                        <buffer name="L215_Impact_Pressure" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="B8">
+                        <buffer name="L270_Status_Information_DW1" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="B9">
+                        <buffer name="L271_Heater_Mode_DW2" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="C8">
+                        <buffer name="L310_QC_raw" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="C9">
+                        <buffer name="L311_PS_raw" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="CA">
+                        <buffer name="L312_IAT" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="CB">
+                        <buffer name="L313_BAT" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D0">
+                        <buffer name="L320_DR" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D1">
+                        <buffer name="L321_HTR" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="D2">
+                        <buffer name="L322_CUR" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F0">
+                        <buffer name="L360_PS" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F1">
+                        <buffer name="L361_PT" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F2">
+                        <buffer name="L362_QC" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F3">
+                        <buffer name="L363_AoA" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F4">
+                        <buffer name="L364_AoS" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F5">
+                        <buffer name="L365_TAT" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F6">
+                        <buffer name="L366_SAT" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F7">
+                        <buffer name="L367_CR" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F8">
+                        <buffer name="L370_Mach" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="F9">
+                        <buffer name="L371_CAS" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FA">
+                        <buffer name="L372_TAS" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FB">
+                        <buffer name="L373_HP" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FC">
+                        <buffer name="L374_dP_AoA" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FD">
+                        <buffer name="L375_dP_AoS" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                    <label labelId="FE">
+                        <buffer name="L376_HBARO" depth="1" parityEnabled="true"/>
+                        <!-- <parameter name="Whole_Frame" startBit="0" numberBits="32" scaleFactor="1.0" scaleOffset="0.0" signed="False" /> -->
+                    </label>
+                </labels>
+            </Rx>
+        </channel429>
+</board429>

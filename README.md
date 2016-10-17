@@ -2,9 +2,17 @@
 
 **AIT ARINC 429 Custom Device** allows users to use the [AIT ARINC 429 devices](http://sine.ni.com/nips/cds/view/p/lang/en/nid/209770) inside NI VeriStand. This is an avionic interface bus standard.
 
+The Custom Device was developed in cooperation with SET GmbH, a National Instruments Gold Alliance Partner. SET established itself as the primary reference of aerospace, automotive
+and power semiconductor industries. 
+
+SET GmbH | Smart embedded Technologies
+http://www.smart-e-tech.de/
+
+
+
 ### LabVIEW Version ###
 
-LabVIEW 2011
+LabVIEW 2015 SP1
 
 ### Built Availability ###
 
@@ -16,7 +24,10 @@ This IP should be considered high quality and mature. The AIT ARINC 429 Custom D
 
 ### Dependencies ###
 
-AIT ARINC 429 LabVIEW driver 4.8 or later
+AIT ARINC 429 LabVIEW driver 5.8.1 or later
+LabVIEW FPGA Advanced Interface Tools
+
+
 
 ### License ###
 
