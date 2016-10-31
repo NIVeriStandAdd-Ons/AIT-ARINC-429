@@ -37,7 +37,6 @@
 				<Item Name="AIT 429.lvlib" Type="Library" URL="/&lt;instrlib&gt;/AIT 429/AIT 429.lvlib"/>
 			</Item>
 			<Item Name="user.lib" Type="Folder">
-				<Item Name="FPGA Bitfile Utility.lvlib" Type="Library" URL="/&lt;userlib&gt;/_FPGA Interface Advanced Tools/FPGA Bitfile Utility/FPGA Bitfile Utility.lvlib"/>
 				<Item Name="Owl429.lvlib" Type="Library" URL="/&lt;userlib&gt;/ARINC-429/Owl429.lvlib"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">

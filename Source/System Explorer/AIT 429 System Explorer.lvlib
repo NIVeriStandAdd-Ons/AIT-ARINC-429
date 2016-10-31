@@ -86,15 +86,6 @@
 				<Item Name="Refresh Labels.vi" Type="VI" URL="../SubVIs/Refresh DB/Refresh Labels.vi"/>
 				<Item Name="Refresh Param Channels.vi" Type="VI" URL="../SubVIs/Refresh DB/Refresh Param Channels.vi"/>
 			</Item>
-			<Item Name="Select FPGA" Type="Folder">
-				<Item Name="Bitfile Component Check.vi" Type="VI" URL="../SubVIs/Select FPGA/Bitfile Component Check.vi"/>
-				<Item Name="Get Available FPGA Components.vi" Type="VI" URL="../SubVIs/Select FPGA/Get Available FPGA Components.vi"/>
-				<Item Name="Get Bitfile Checksum.vi" Type="VI" URL="../SubVIs/Select FPGA/Get Bitfile Checksum.vi"/>
-				<Item Name="Get FPGA Dependent File.vi" Type="VI" URL="../SubVIs/Select FPGA/Get FPGA Dependent File.vi"/>
-				<Item Name="GetSDFPath.vi" Type="VI" URL="../SubVIs/Select FPGA/GetSDFPath.vi"/>
-				<Item Name="SEA_9811_Select_FPGA.vi" Type="VI" URL="../SubVIs/Select FPGA/SEA_9811_Select_FPGA.vi"/>
-				<Item Name="Select FPGA.vi" Type="VI" URL="../SubVIs/Select FPGA/Select FPGA.vi"/>
-			</Item>
 			<Item Name="1.8.0 Mutation.vi" Type="VI" URL="../SubVIs/1.8.0 Mutation.vi"/>
 			<Item Name="2.0.0 Mutation.vi" Type="VI" URL="../SubVIs/2.0.0 Mutation.vi"/>
 			<Item Name="Add Custom Device Channel - Offline.vi" Type="VI" URL="../SubVIs/Add Custom Device Channel - Offline.vi"/>
@@ -107,7 +98,6 @@
 			<Item Name="Create Sysdef Tree from DB Channel Clusters.vi" Type="VI" URL="../SubVIs/Create Sysdef Tree from DB Channel Clusters.vi"/>
 			<Item Name="Create Sysdef Tree Labels.vi" Type="VI" URL="../SubVIs/Create Sysdef Tree Labels.vi"/>
 			<Item Name="DB Import Action - Create Chans.vi" Type="VI" URL="../SubVIs/DB Import Action - Create Chans.vi"/>
-			<Item Name="Main Page Init SEA FPGA.vi" Type="VI" URL="../SubVIs/Main Page Init SEA FPGA.vi"/>
 			<Item Name="PtByPt Counter.vi" Type="VI" URL="../SubVIs/PtByPt Counter.vi"/>
 			<Item Name="Resolve DB Bin File Name and Path.vi" Type="VI" URL="../SubVIs/Resolve DB Bin File Name and Path.vi"/>
 			<Item Name="SEA_9811_Create_Send_Channels.vi" Type="VI" URL="../SubVIs/SEA_9811_Create_Send_Channels.vi"/>
