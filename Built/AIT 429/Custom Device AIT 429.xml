@@ -5,7 +5,7 @@
     <eng>ARINC 429 AIT</eng>
     <loc>ARINC 429 AIT</loc>
   </AddMenu>
-  <Version>3.0.2</Version>
+  <Version>3.0.3</Version>
   <Type>Inline HW Interface</Type>
   <MaxOccurrence>2474</MaxOccurrence>
   <MainPageGUID>6de686c8-271d-4eac-aefc-5952b5c6028a</MainPageGUID>
